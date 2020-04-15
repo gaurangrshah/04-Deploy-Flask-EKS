@@ -6,16 +6,16 @@ Description: EKSWSV1
 Parameters:
   EksClusterName:
     Type: String
-    Description: eksctl-simple-jwt-api-cluster
-    Default:
+    Description: The name of the EKS cluster created
+    Default: simple-jwt-api
     MinLength: 1
     MaxLength: 100
     ConstraintDescription: You must enter the EKS cluster name
 
   GitSourceRepo:
     Type: String
-    Description: https://github.com/gaurangrshah/04-Deploy-Flask-EKS.git
-    Default:
+    Description: GitHub source repository - must contain a Dockerfile and buildspec.yml in the base
+    Default: https://github.com/gaurangrshah/04-Deploy-Flask-EKS.git
     MinLength: 1
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub repository name
@@ -23,7 +23,7 @@ Parameters:
   GitBranch:
     Type: String
     Default: master
-    Description: master
+    Description: GitHub git repository branch - change triggers a new build
     MinLength: 1
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub repository branch name
@@ -31,15 +31,15 @@ Parameters:
   GitHubToken:
     Type: String
     NoEcho: true
-    Description: 1a036e981cb6f4aa79924d20e5dfab882eb6f107
+    Description: GitHub API token - see https://github.com/blog/1509-personal-api-tokens
     MinLength: 3
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub personal access token
 
   GitHubUser:
     Type: String
-    Default:
-    Description: gaurangrshah
+    Default: gaurangrshah
+    Description: GitHub username or organization
     MinLength: 3
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub username or organization
@@ -54,8 +54,8 @@ Parameters:
 
   KubectlRoleName:
     Type: String
-    Default:
-    Description: UdacityFlaskDeployCBKubectlRole
+    Default: UdacityFlaskDeployCBKubectlRole
+    Description: IAM role used by kubectl to interact with EKS cluster
     MinLength: 3
     MaxLength: 100
     ConstraintDescription: You must enter a kubectl IAM role
