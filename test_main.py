@@ -12,6 +12,7 @@ TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjEzMDY3OTAsIm5iZiI6MT
 EMAIL = 'wolf@thedoor.com'
 PASSWORD = 'huff-puff'
 
+
 @pytest.fixture
 def client():
     os.environ['JWT_SECRET'] = SECRET
@@ -20,6 +21,7 @@ def client():
 
     yield client
 
+# 🚧 ? TODO?
 
 
 def test_health(client):
@@ -31,7 +33,7 @@ def test_health(client):
 def test_auth(client):
     body = {'email': EMAIL,
             'password': PASSWORD}
-    response = client.post('/auth', 
+    response = client.post('/auth',
                            data=json.dumps(body),
                            content_type='application/json')
 
