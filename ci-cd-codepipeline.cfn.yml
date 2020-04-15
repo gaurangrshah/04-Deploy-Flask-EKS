@@ -14,7 +14,7 @@ Parameters:
 
   GitSourceRepo:
     Type: String
-    Description: GitHub source repository - must contain a Dockerfile and buildspec.yml in the base
+    Description: https://github.com/gaurangrshah/04-Deploy-Flask-EKS.git
     Default:
     MinLength: 1
     MaxLength: 100
@@ -23,7 +23,7 @@ Parameters:
   GitBranch:
     Type: String
     Default: master
-    Description: GitHub git repository branch - change triggers a new build
+    Description: master
     MinLength: 1
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub repository branch name
@@ -31,7 +31,7 @@ Parameters:
   GitHubToken:
     Type: String
     NoEcho: true
-    Description: GitHub API token - see https://github.com/blog/1509-personal-api-tokens
+    Description: 1a036e981cb6f4aa79924d20e5dfab882eb6f107
     MinLength: 3
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub personal access token
@@ -39,7 +39,7 @@ Parameters:
   GitHubUser:
     Type: String
     Default:
-    Description: GitHub username or organization
+    Description: gaurangrshah
     MinLength: 3
     MaxLength: 100
     ConstraintDescription: You must enter a GitHub username or organization
@@ -55,7 +55,7 @@ Parameters:
   KubectlRoleName:
     Type: String
     Default:
-    Description: IAM role used by kubectl to interact with EKS cluster
+    Description: UdacityFlaskDeployCBKubectlRole
     MinLength: 3
     MaxLength: 100
     ConstraintDescription: You must enter a kubectl IAM role
