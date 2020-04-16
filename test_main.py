@@ -12,8 +12,6 @@ TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjEzMDY3OTAsIm5iZiI6MT
 EMAIL = 'wolf@thedoor.com'
 PASSWORD = 'huff-puff'
 
-# testing7
-
 
 @pytest.fixture
 def client():
@@ -26,7 +24,6 @@ def client():
 
 def test_health(client):
     response = client.get('/')
-    # assert False
     assert response.status_code == 200
     assert response.json == 'Healthy'
 
